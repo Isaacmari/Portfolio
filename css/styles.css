@@ -1,0 +1,196 @@
+:root {
+  --nav-color1: rgba(38, 184, 240, 1); /* darkcyan */
+  --nav-color2: rgba(252, 219, 174, 1); /* lightorange */
+  --tiles-color: rgba(22, 178, 245, 1); /* lightcyan */
+  --footer-color: rgba(219, 80, 72, 1); /* brown */
+  --purple-color: rgba(180, 34, 224, 0.5); /* purple */
+  --purple-color2: rgba(75, 13, 79, 0.8); /* darkpurple */
+  --blue-color: rgba(25, 32, 212, 0.9); /* blue */
+}
+
+/* Set font size for easy rem calculations
+  * default document font size = 16px, 1rem = 16px, 100% = 16px
+  * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+*/
+
+/* A few media query to set some font sizes at different screen sizes.
+* This helps automate a bit of responsiveness.
+* The trick is to use the rem unit for size values, margin and padding.
+* Because rem is relative to the document font size
+* when we scale up or down the font size on the document
+* it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+* The calculation is the following
+* screen size divided by browser base font size
+* As an example: a breakpoint at 980px
+* 980px / 16px = 61.25em
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Section  */
+#navbar {
+  background-color: var(--nav-color1);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nav-list {
+  display: flex;
+  flex-direction: row;
+  padding-right: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+#nav-list > li > a {
+  color: var(--nav-color2);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 16px;
+}
+
+#nav-list > li > a:hover {
+  background-color: blue;
+}
+
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+  background-image: linear-gradient(62deg, blue 0%, orange 100%);
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+#welcome-section > p {
+  color: var(--nav-color1);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 300;
+  margin-top: -30px;
+}
+
+/* Project Section */
+.projects {
+  text-align: center;
+  background-color: lightyellow;
+  margin: 0px;
+  padding: 10px;
+}
+
+div > a {
+  color: var(--blue-color);
+}
+
+div > a:hover {
+  font-size: 18px;
+  color: var(--purple-color2);
+}
+
+.projects > h2 {
+  font-size: 4.2em;
+  color: black;
+}
+
+.project-img {
+  height: calc(100% - 10.8rem);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.project-tile {
+  color: ;
+  width: 100%;
+  background-color: var(--purple-color);
+ /* padding: 1rem; */
+  margin: 0;
+  padding: 15px 0 25px 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+/* contact section */
+#contact {
+  background-color: var(--footer-color);
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-header > h2 {
+  font-size: 3rem;
+}
+
+#contact-header > p {
+  text-align: center;
+  margin-top: -20px;
+  font-style: italic;
+}
+
+/* do later and more */
+.contact-links {
+  font-size: 2rem;
+  color: yellow;
+}
+
+/* media queries */
+@media (max-width: 800px) {
+  h1, #projects > h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  #welcome-section > p {
+    font-size: 17px;
+}
+
+@media (max-width: 800px) {
+  h2 {
+    font-size: 10px;
+  }
+}
